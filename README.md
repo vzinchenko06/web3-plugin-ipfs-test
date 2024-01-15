@@ -7,7 +7,6 @@ and another function for listing all stored CIDs of given ethereum address.
 
 How to use
 ------------
-
 - Register the plugin:
 
     ```javascript
@@ -24,15 +23,21 @@ How to use
 - Uploads local files to IPFS and stores CID on Ethereum:
 
     ```javascript 
+     // Node.js - path to a file shoud be used
      const {cid} = await web3.ipfs.upload('path/to/file')
-     console.log(cid) // CID(...)w
+     console.log(cid) // CID(...)
+     
+     // Browser - a File object should be used
+     const {cid} = await web3.ipfs.upload(input.files[0])
+     console.log(cid) // CID(...)
     ```  
   to send a store transaction to the smart contract, you need to provide the wallet:
     ```javascript
       web3.eth.accounts.wallet.add(myAccount);
+      // set wallet as default account
       web3.defaultAccount = myAccount.address;
-      // OR
-      await web3.ipfs.upload('path/to/file', '0x11dde53b21fd8368cd3b7213e9a7e5e40c76ec19')
+      // or provide it as a parameter
+      await web3.ipfs.upload('path/to/file', myAccount.address)
     ```
 
 - Lists all stored CIDs of given ethereum address:
