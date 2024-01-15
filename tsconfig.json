@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "esnext",
+    "module": "es2020",
+    "declaration": true,
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "outDir": "lib",
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "typeRoots": [
+      "node_modules/@types",
+    ],
+    "types": ["node"]
+  },
+  "include": ["src", "test"],
+  "exclude": ["node_modules"]
+}
